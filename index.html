@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do_you_love_me</title>
+</head>
+<body>
+<div id="container">
+  <h1 id="tilte">Do you love me?</h1>
+  <button id="yes_btn">Có</button>
+  <button id="no_btn">Không</button>
+</div>
+</body>
+</html>
+<script>
+  let yes_btn = document.getElementById('yes_btn');
+  let no_btn = document.getElementById('no_btn');
+  let container = document.getElementById('container');
+  yes_btn.addEventListener('click', yes_click);
+  no_btn.addEventListener('mouseover', mouseover);
+  function init() {
+    container.style.position = 'relative';
+    container.style.width = '100%';
+    yes_btn.style.position = 'absolute';
+    yes_btn.style.left = '20px';
+    no_btn.style.position = 'absolute';
+    no_btn.style.left = '70px';
+  }
+  function yes_click() {
+    alert('Yeah! Me too');
+  }
+  function mouseover() {
+    let x = Math.round(Math.random() * window.innerWidth);
+    let y = Math.round(Math.random() * window.innerHeight);
+    no_btn.style.left = x + 'px';
+    no_btn.style.top = y + 'px';
+  }
+  window.onload = init;
+</script>
